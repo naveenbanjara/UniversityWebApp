@@ -27,7 +27,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="Pages\About.cshtml" />
+    <None Include="Pages\About\Index.cshtml" />
   </ItemGroup>
 
 </Project>
