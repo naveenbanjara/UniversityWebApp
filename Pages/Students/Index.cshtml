@@ -8,7 +8,7 @@
 <h1>Students</h1>
 
 <p>
-    <a asp-page="Create">Create New</a>
+    <a class="btn btn-outline-secondary" asp-page="Create">Create New</a>
 </p>
 
 <form asp-page="./Index" method="get">
@@ -16,17 +16,17 @@
         <p>
             Find by name:
             <input type="text" name="SearchString" value="@Model.CurrentFilter" />
-            <input type="submit" value="Search" class="btn btn-primary" />
-            <a asp-page="./Index">Back to full list</a>
+            <input type="submit" value="Search" class="btn btn-secondary" />
+            <a class="btn btn-outline-secondary" asp-page="./Index">Back to full list</a>
         </p>
     </div>
 </form>
 
 <table class="table">
     <thead>
-        <tr>
+        <tr class="thead-dark">
             <th>
-                <a asp-page="./Index" asp-route-sortOrder="@Model.NameSort" asp-route-currentFilter="@Model.CurrentFilter">
+                <a class="text-white" asp-page="./Index" asp-route-sortOrder="@Model.NameSort" asp-route-currentFilter="@Model.CurrentFilter">
                     @Html.DisplayNameFor(model => model.Students[0].LastName)
                 </a>
             </th>
@@ -34,7 +34,7 @@
                 @Html.DisplayNameFor(model => model.Students[0].FirstMidName)
             </th>
             <th>
-                <a asp-page="./Index" asp-route-sortOrder="@Model.DateSort" asp-route-currentFilter="@Model.CurrentFilter">
+                <a class="text-white" asp-page="./Index" asp-route-sortOrder="@Model.DateSort" asp-route-currentFilter="@Model.CurrentFilter">
                     @Html.DisplayNameFor(model => model.Students[0].EnrollmentDate)
                 </a>
             </th>
@@ -54,9 +54,9 @@
                 @Html.DisplayFor(modelItem => item.EnrollmentDate)
             </td>
             <td>
-                <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
-                <a asp-page="./Details" asp-route-id="@item.ID">Details</a> |
-                <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
+                <a class="btn btn-secondary" asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
+                <a class="btn btn-secondary" asp-page="./Details" asp-route-id="@item.ID">Details</a> |
+                <a class="btn btn-secondary" asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
             </td>
         </tr>
 }
@@ -70,13 +70,13 @@
    asp-route-sortOrder="@Model.CurrentSort"
    asp-route-pageIndex="@(Model.Students.PageIndex-1)"
    asp-route-currentFilter="@Model.CurrentFilter"
-   class="btn btn-primary @prevDisabled">
+   class="btn btn-outline-secondary @prevDisabled">
     Previous
 </a>
 <a asp-page="./Index"
    asp-route-sortOrder="@Model.CurrentSort"
    asp-route-pageIndex="@(Model.Students.PageIndex+1)"
    asp-route-currentFilter="@Model.CurrentFilter"
-   class="btn btn-primary @nextDisabled">
+   class="btn btn-outline-secondary @nextDisabled">
     Next
 </a>
